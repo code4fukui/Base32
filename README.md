@@ -1,4 +1,4 @@
-# Base 32 encoding/decoding for JavaScript ![example workflow](https://github.com/agnoster/base32-js/actions/workflows/main.yml/badge.svg)
+# Base32 encoding/decoding ES module for JavaScript
 
 Base 32 is between hexadecimal notation and Base 64 encoding. It's intended to be a **human-friendly** -- you don't have to worry about punctuation, capitalization, or letters/numbers that are easy to confuse, making it easier to transmit in handwriting or over the phone.
 
@@ -6,7 +6,7 @@ One of the primary purposes is to have aesthetically pleasing SHA1 hashes. Compa
 
  - Hex: `17O57684bea1f9331418b633a8f373119d765fd4`
  - B64: `xE_ptB5SeclHm8JEsD0-ST1mTBM`
- - B32: `2w2qd15ym7wk650rprtuh4vk26eqcqym`
+ - B32: `RJ56_U1WM_LTT5_3TQH_K4P0_YJ4L_UTKD_3ZZZ_ZW`
 
 Try giving out the Base 64 hash over the phone! "lowercase 'x', capital 'E', underscore, lowercase 'p', ..." Base 32 will work the same with upper- or lowercase, you can mistake a number for a similar-looking letter, and it will *still* decode to the same data.
 
