@@ -7,6 +7,21 @@ Deno.test("simple", () => {
   const decoded = Base32.decode(encoded);
   t.assertEquals(decoded, s);
 });
+Deno.test("sep1", () => {
+  const s = new Uint8Array(5);
+  const encoded = Base32.encode(s);
+  t.assertEquals(encoded, "0000_0000");
+});
+Deno.test("sep2", () => {
+  const s = new Uint8Array(6);
+  const encoded = Base32.encode(s);
+  t.assertEquals(encoded, "0000_0000_00");
+});
+Deno.test("sep3", () => {
+  const s = new Uint8Array(4);
+  const encoded = Base32.encode(s);
+  t.assertEquals(encoded, "0000_000");
+});
 Deno.test("len 5", () => {
   const s = new Uint8Array(5);
   for (let i = 0; i < s.length; i++) {

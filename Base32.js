@@ -17,10 +17,10 @@ const encode = (bin, withsep = true) => {
     const c = r.read(5);
     if (c < 0) break;
     const n = B32[c];
-    res[idx++] = n;
-    if (withsep && idx % 5 == 4) {
+    if (withsep && idx > 0 && idx % 5 == 4) {
       res[idx++] = SEP;
     }
+    res[idx++] = n;
   }
   return new TextDecoder().decode(new Uint8Array(res.buffer, 0, idx));
 };
