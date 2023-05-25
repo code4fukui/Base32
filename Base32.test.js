@@ -57,3 +57,15 @@ Deno.test("spc", () => {
   const decoded2 = Base32.decode("  D-5J6\n 6  ");
   t.assertEquals(decoded, decoded2);
 });
+Deno.test("prikey", () => {
+  const key = new Uint8Array(32);
+  for (let i = 0; i < key.length; i++) {
+    key[i] = Math.random() * 256;
+  }
+  const encoded = Base32.encode(key);
+  //console.log(encoded); // MNNU_1LKG_6R29_Z5JM_ZT25_01DH_850E_PWK0_XR2D_L5DP_KAK3_9EWV_V2T0
+  t.assertEquals(encoded.length, 64);
+  const encoded2 = Base32.encode(key, false);
+  //console.log(encoded2); // MNNU1LKG6R29Z5JMZT2501DH850EPWK0XR2DL5DPKAK39EWVV2T0
+  t.assertEquals(encoded2.length, 52);
+});

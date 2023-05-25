@@ -21,6 +21,13 @@ const encoded = Base32.encode(new Uint8Array([1, 2, 3, 4]));
 console.log(encoded);
 const decoded = Base32.decode(encoded);
 console.log(decoded);
+
+const key = new Uint8Array(32); // 32byte -> 64chars or 52chars
+crypto.getRandomValues(key);
+const encoded = Base32.encode(key);
+console.log(encoded); // MNNU_1LKG_6R29_Z5JM_ZT25_01DH_850E_PWK0_XR2D_L5DP_KAK3_9EWV_V2T0 // 64chars
+const encoded2 = Base32.encode(key, false);
+console.log(encoded2); // MNNU1LKG6R29Z5JMZT2501DH850EPWK0XR2DL5DPKAK39EWVV2T0 // 52chars
 ```
 
 ## Warning: this is *a* Base 32 implementation, not *the* Base 32 implementation
