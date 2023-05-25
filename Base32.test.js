@@ -43,3 +43,17 @@ Deno.test("array", () => {
     t.assertEquals(decoded, n);
   }
 });
+Deno.test("lowercase", () => {
+  const s = new TextEncoder().encode("abc");
+  const encoded = Base32.encode(s);
+  const decoded = Base32.decode(encoded);
+  const decoded2 = Base32.decode("d5j6_6");
+  t.assertEquals(decoded, decoded2);
+});
+Deno.test("spc", () => {
+  const s = new TextEncoder().encode("abc");
+  const encoded = Base32.encode(s);
+  const decoded = Base32.decode(encoded);
+  const decoded2 = Base32.decode("  D-5J6\n 6  ");
+  t.assertEquals(decoded, decoded2);
+});

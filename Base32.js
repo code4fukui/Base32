@@ -27,6 +27,7 @@ const encode = (bin, withsep = true) => {
 
 const decode = (s) => {
   const s2 = [];
+  s = s.toUpperCase();
   for (const c of s) {
     const a = ALIAS[c];
     if (a) {
