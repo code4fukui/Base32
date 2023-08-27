@@ -4,8 +4,8 @@ Base 32 is between hexadecimal notation and Base 64 encoding. It's intended to b
 
 One of the primary purposes is to have aesthetically pleasing SHA1 hashes. Compare:
 
- - Hex: `17O57684bea1f9331418b633a8f373119d765fd4`
- - B64: `xE_ptB5SeclHm8JEsD0-ST1mTBM`
+ - Hex: `17057684bea1f9331418b633a8f373119d765fd4`
+ - B64: `FwV2hL6h+TMUGLYzqPNzEZ12X9Q=`
  - B32: `RJ56_U1WM_LTT5_3TQH_K4P0_YJ4L_UTKD_3ZZZ_ZW`
 
 Try giving out the Base 64 hash over the phone! "lowercase 'x', capital 'E', underscore, lowercase 'p', ..." Base 32 will work the same with upper- or lowercase, you can mistake a number for a similar-looking letter, and it will *still* decode to the same data.

@@ -1,5 +1,7 @@
 import * as t from "https://deno.land/std/testing/asserts.ts";
 import { Base32 } from "./Base32.js";
+import { Base16 } from "https://code4fukui.github.io/Base16/Base16.js";
+import { Base64 } from "https://code4fukui.github.io/Base64/Base64.js";
 
 Deno.test("simple", () => {
   const s = new TextEncoder().encode("abc");
@@ -68,4 +70,14 @@ Deno.test("prikey", () => {
   const encoded2 = Base32.encode(key, false);
   //console.log(encoded2); // MNNU1LKG6R29Z5JMZT2501DH850EPWK0XR2DL5DPKAK39EWVV2T0
   t.assertEquals(encoded2.length, 52);
+});
+Deno.test("sha128", () => {
+  const sha = Base16.decode("17057684bea1f9331418b633a8f373119d765fd4");
+  const s = Base32.encode(sha);
+  t.assertEquals(s, "2W2Q_E15Y_M7WL_650R_PRTU_JWVL_26FQ_DQYM");
+  const s2 = Base64.encode(sha);
+  //console.log(s2);
+  t.assertEquals(s2, "FwV2hL6h+TMUGLYzqPNzEZ12X9Q=");
+  const sha2 = Base32.decode(s);
+  t.assertEquals(sha, sha2);
 });
