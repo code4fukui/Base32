@@ -1,4 +1,7 @@
 # Base32
+
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 Base 32 encoding/decoding ES module for JavaScript.
 
 ## Features
