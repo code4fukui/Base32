@@ -33,4 +33,4 @@ console.log(encoded52); // 52-character Base32 string
 This is *a* Base 32 implementation, not *the* Base 32 implementation. There are about (128 choose 32) different specifications of something called "Base 32" - see [Wikipedia](http://en.wikipedia.org/wiki/Base_32) for some of them. This is just one that should be simple and less error-prone.
 
 ## License
-MIT License
+MIT License — see [LICENSE](LICENSE).
